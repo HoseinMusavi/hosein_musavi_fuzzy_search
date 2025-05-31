@@ -42,9 +42,7 @@ List<FuzzySearchResult> fuzzySearch(
   for (String item in items) {
     int distance = levenshteinDistance(query, item);
     double membership = fuzzyMembership(distance, maxDistance);
-    if (membership > 0.5) {
-      results.add(FuzzySearchResult(item, membership));
-    }
+    results.add(FuzzySearchResult(item, membership));
   }
   return results;
 }
